@@ -16,7 +16,7 @@ Este es una página web donde muestra los 151 pokemon con un filtro de sus clase
 * [LinkedIn](https://www.linkedin.com/in/lucas-barrera-266862239/)
 
 ## Ver ejemplo en vivo
-- [URL-de-github-pages-de-este-proyecto](URL-de-github-pages-de-este-proyecto)
+- [https://lucasba15.github.io/Pokedex-Project/] (https://lucasba15.github.io/Pokedex-Project/)
 
 ## Instalación 
 Este proyecto no necesita de instalación. Simplemente abre la carpeta o haz doble click en el .html
