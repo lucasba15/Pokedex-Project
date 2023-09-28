@@ -73,7 +73,7 @@ main {
 
 .contenedor_tarjeta {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
     margin: .25rem;
 }
@@ -172,15 +172,18 @@ main {
     font-size: 14px;
 }
 
-@media (min-width: 700px) {
+@media screen and (min-width: 573px) {
     .contenedor_tarjeta {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-@media(min-width: 905px) {
+@media screen and (min-width: 850px) {
     .nombre_pokemon {
         flex-direction: row;
+    }
+    .contenedor_tarjeta {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
