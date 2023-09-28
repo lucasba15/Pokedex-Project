@@ -1,14 +1,25 @@
 const listapokemon = document.querySelector("#listapokemon");
-const botonesheader = document.querySelectorAll(".btn-header")
+const botonesheader = document.querySelectorAll(".btn-header");
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 
+// Crear un array para almacenar los datos de los Pokémon
+const pokemonDataArray = [];
 
 for (let i = 1; i <= 151; i++) {
     fetch(URL + i)
         .then((response) => response.json())
-        .then(data => mostrarpokemon(data))
-}
+        .then(data => {
+            // Almacenar los datos en el array
+            pokemonDataArray.push(data);
 
+            // Ordenar el array por ID
+            pokemonDataArray.sort((a, b) => a.id - b.id);
+
+            // Mostrar los Pokémon ordenados
+            listapokemon.innerHTML = "";
+            pokemonDataArray.forEach(pokemon => mostrarpokemon(pokemon));
+        });
+}
 
 function mostrarpokemon(data) {
     let tipos = data.types.map(type => `<h3 class="${type.type.name}">${type.type.name}</h3>`);
@@ -23,7 +34,8 @@ function mostrarpokemon(data) {
 
     const div = document.createElement("div");
     div.classList.add("tarjeta");
-    div.innerHTML = `<img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name}">
+    div.innerHTML = `
+    <img src="${data.sprites.other["official-artwork"].front_default}" alt="${data.name}">
     <div class="numero_pokemon">
         <h2 class="numero_grande">#${dataid}</h2>
     </div>
@@ -39,6 +51,7 @@ function mostrarpokemon(data) {
         <h3 class="peso">${data.weight}KG</h3>
     </div>
     `;
+    
     // Aplicar estilo a los elementos generados dinámicamente
     div.querySelectorAll('h3').forEach((element) => {
         element.style.display = "flex";
@@ -59,19 +72,16 @@ botonesheader.forEach(boton => boton.addEventListener("click", (event) => {
 
     listapokemon.innerHTML = "";
 
-    for (let i = 1; i <= 151; i++) {
-        fetch(URL + i)
-            .then((response) => response.json())
-            .then(data => {
-
-                if (botonid === "vertodos") {
-                    mostrarpokemon(data);
-                } else {
-                    const tipos = data.types.map(type => type.type.name);
-                    if (tipos.some(tipo => tipo.includes(botonid))) {
-                        mostrarpokemon(data);
-                    }
-                }
-            })
+    if (botonid === "vertodos") {
+        // Mostrar todos los Pokémon ordenados
+        pokemonDataArray.forEach(pokemon => mostrarpokemon(pokemon));
+    } else {
+        // Filtrar y mostrar los Pokémon que coincidan con el tipo seleccionado
+        const filteredPokemon = pokemonDataArray.filter(pokemon => {
+            const tipos = pokemon.types.map(type => type.type.name);
+            return tipos.some(tipo => tipo.includes(botonid));
+        });
+        filteredPokemon.forEach(pokemon => mostrarpokemon(pokemon));
     }
-}))
+}));
+
