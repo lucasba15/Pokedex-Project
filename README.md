@@ -15,7 +15,7 @@ Este es una página web donde muestra los 151 pokemon con un filtro de sus clase
 ## Autor ✒️
 **Lucas Barrera**
 
-* [micorreo@midominio.com](barreralucas26@gmail.com)
+* [barreralucas26@gmail.com](barreralucas26@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/lucas-barrera-266862239/)
 
 ## Instalación 
