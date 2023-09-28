@@ -1,8 +1,5 @@
 # Pokédex
 
-## Ver ejemplo en vivo
-- [URL-de-github-pages-de-este-proyecto](URL-de-github-pages-de-este-proyecto)
-
 ## Descripción 📑
 Este es una página web donde muestra los 151 pokemon con un filtro de sus clases. Esta hecha con html, css y javascript.
 
@@ -17,6 +14,9 @@ Este es una página web donde muestra los 151 pokemon con un filtro de sus clase
 
 * [barreralucas26@gmail.com](barreralucas26@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/lucas-barrera-266862239/)
+
+## Ver ejemplo en vivo
+- [URL-de-github-pages-de-este-proyecto](URL-de-github-pages-de-este-proyecto)
 
 ## Instalación 
 Este proyecto no necesita de instalación. Simplemente abre la carpeta o haz doble click en el .html
